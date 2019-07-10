@@ -29,6 +29,7 @@ module ActionDispatch
 
         defaults          = (scope[:defaults] || {}).dup
         scope_constraints = scope[:constraints] || {}
+        scope_options = scope[:options] || {}
 
         blocks = scope[:blocks] ? scope[:blocks].dup : []
 
@@ -36,7 +37,7 @@ module ActionDispatch
           blocks.push RouteTranslator::HostPathConsistencyLambdas.for_locale(locale)
         end
 
-        ::ActionDispatch::Routing::Mapper::Mapping.new(route_set, translated_path_ast, defaults, controller, default_action, scope[:module], to, formatted, scope_constraints, blocks, via, translated_options_constraints, anchor, options)
+        ::ActionDispatch::Routing::Mapper::Mapping.new(route_set, translated_path_ast, defaults, controller, default_action, scope[:module], to, formatted, scope_constraints, scope_options, blocks, via, translated_options_constraints, anchor, options)
       end
 
       def add_route_to_set(mapping, path_ast, name, anchor)
