@@ -3,6 +3,7 @@
 ## dev / unreleased
 
 * [FEATURE] Add Rails > 6.0.0.rc1 compatibility
+* [FEATURE] Explicitly add `around_action` to set locale from params
 * [ENHANCEMENT] Update development dependencies
 
 ## 6.0.0 / 2019-05-16
